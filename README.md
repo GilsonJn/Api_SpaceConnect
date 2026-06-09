@@ -13,7 +13,7 @@
 
 ## 📝 Motivação e Descrição do Projeto
 A **Space Connect Core API** é o motor central de um ecossistema de monitoramento aeroespacial e agrícola de alta precisão. O projeto nasceu da necessidade crítica de mitigar riscos ecológicos e otimizar a segurança de operações em campo. O sistema integra:
-1. **Edge Computing / Computação Visual (Dispositivos de Solo - AgroScan):** Câmeras conectadas a microrcontroladores executando algoritmos baseados em OpenCV e Mediapipe para identificar anomalias biológicas em tempo real (ex: focos agressivos de fungos como *Botrytis* em culturas agrícolas).
+1. **Edge Computing / Computação Visual (Dispositivos de Solo - AgroScan):** Câmeras conectadas a microrcontroladores executando algoritmos baseados em OpenCV e Mediapipe para identificar anomalias biológicas em tempo real (ex: focos agressivos de fungos como *Botrytis* em culturas agrícolas). (Saiba mais: https://youtu.be/lX_ekC3Mb4w?si=Jt2sTaLGaHyCMsnN)
 2. **Telemetria de Órbita (Satélites):** Sensores aeroespaciais que coletam variações meteorológicas críticas, tempestades magnéticas e dados macroclimáticos.
 
 Esta API centraliza esses dados heterogêneos, valida regras críticas de segurança de solo, gerencia o ciclo de vida dos dispositivos e fornece um histórico imutável e auditável de alertas de anomalias com manipulação de tempo precisa.
