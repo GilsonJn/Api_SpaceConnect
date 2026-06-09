@@ -15,7 +15,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@io.swagger.v3.oas.annotations.security.SecurityRequirement(name = "bearer-key")
 @RequestMapping("/alertas")
+@CrossOrigin(origins = "*")
 public class AlertaController {
 
     @Autowired

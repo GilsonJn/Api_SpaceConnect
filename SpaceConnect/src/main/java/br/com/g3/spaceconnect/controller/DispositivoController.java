@@ -11,7 +11,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @RestController
+@io.swagger.v3.oas.annotations.security.SecurityRequirement(name = "bearer-key")
 @RequestMapping("/dispositivos")
+@CrossOrigin(origins = "*")
 public class DispositivoController {
 
     @Autowired
