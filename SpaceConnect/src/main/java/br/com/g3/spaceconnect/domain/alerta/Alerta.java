@@ -38,4 +38,13 @@ public class Alerta {
     public void marcarComoResolvido() {
         this.dataHoraResolucao = LocalDateTime.now();
     }
+
+    public void atualizarInformacoes(DadosAtualizacaoAlerta dados) {
+        if (dados.descricao() != null) {
+            this.descricao = dados.descricao();
+        }
+        if (dados.gravidade() != null) {
+            this.gravidade = dados.gravidade();
+        }
+    }
 }

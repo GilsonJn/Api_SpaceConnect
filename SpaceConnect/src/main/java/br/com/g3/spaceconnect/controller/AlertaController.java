@@ -48,4 +48,21 @@ public class AlertaController {
         var alertas = alertaRepository.findAll().stream().map(DadosDetalhamentoAlerta::new).toList();
         return ResponseEntity.ok(alertas);
     }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity<DadosDetalhamentoAlerta> atualizar(@RequestBody @Valid DadosAtualizacaoAlerta dados) {
+        var alerta = alertaRepository.getReferenceById(dados.id());
+        alerta.atualizarInformacoes(dados);
+
+        return ResponseEntity.ok(new DadosDetalhamentoAlerta(alerta));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity excluir(@PathVariable Long id) {
+        alertaRepository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+    }
 }

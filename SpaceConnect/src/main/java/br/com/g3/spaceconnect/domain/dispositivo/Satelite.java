@@ -17,4 +17,9 @@ public class Satelite extends Dispositivo {
     public String analisarStatusDeRisco() {
         return "Analisando macroclima e tempestades via telemetria da NASA...";
     }
+
+    public Satelite(String nome, String localizacao, String orbita) {
+        super(null, nome, localizacao, true);
+        this.orbita = orbita;
+    }
 }

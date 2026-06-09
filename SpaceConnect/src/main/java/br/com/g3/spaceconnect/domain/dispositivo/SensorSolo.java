@@ -17,4 +17,9 @@ public class SensorSolo extends Dispositivo {
     public String analisarStatusDeRisco() {
         return "Analisando microclima e presença de fungos via OpenCV...";
     }
+
+    public SensorSolo(String nome, String localizacao, String culturaMonitorada) {
+        super(null, nome, localizacao, true);
+        this.culturaMonitorada = culturaMonitorada;
+    }
 }

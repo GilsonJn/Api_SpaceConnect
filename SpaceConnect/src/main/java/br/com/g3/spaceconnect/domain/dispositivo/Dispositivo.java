@@ -25,6 +25,18 @@ public abstract class Dispositivo {
 
     public abstract String analisarStatusDeRisco();
 
+    public void atualizarInformacoes(DadosAtualizacaoDispositivo dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.localizacao() != null) {
+            this.localizacao = dados.localizacao();
+        }
+        if (dados.ativo() != null) {
+            this.ativo = dados.ativo();
+        }
+    }
+
     public void inativar() {
         this.ativo = false;
     }
