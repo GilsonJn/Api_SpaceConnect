@@ -47,6 +47,19 @@ Para cumprir com rigor os critérios arquiteturais exigidos pelo edital, o backe
 
 ## 🔀 Endpoints da API (Matriz de Rotas REST)
 
+### 🔐 Autenticação e Segurança (JWT)
+A API está protegida pelo **Spring Security** com autenticação **Stateless via Token JWT (JSON Web Token)**.
+
+| Verbo | Rota | Descrição | Payload (JSON) | Status Sucesso | Status Erro Esperados |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **POST** | `/login` | Autentica um utilizador e devolve o Token JWT. | `{"login": "admin@gmail.com", "senha": "123456"}` | **200 OK** | `403 Forbidden` |
+
+**Como testar no Swagger:**
+1. Execute o endpoint `POST /login` com as credenciais padrão informadas acima (que são criadas automaticamente pela migration `V2`).
+2. Copie o token devolvido na resposta.
+3. Suba até ao topo da página do Swagger, clique no botão **"Authorize"** (ícone de cadeado) e cole o token.
+4. A partir desse momento, todas as rotas (Alertas e Dispositivos) estarão desbloqueadas para os seus testes!
+
 ### 🚨 Gerenciamento de Alertas (`/alertas`)
 
 | Verbo | Rota | Descrição | Payload (JSON) / Parâmetros | Status Sucesso | Status Erro Esperados |
