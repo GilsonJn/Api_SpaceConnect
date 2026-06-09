@@ -116,3 +116,21 @@ Abra qualquer navegador de internet moderno e acesse a URL da central gráfica d
 
 Através do Swagger, você poderá testar todas as validações de barramento de dispositivos inativos, registrar alertas, resolver eventos de anomalia climática/biológica e acompanhar o comportamento estável da engenharia de software da aplicação.
 
+---
+
+## 📊 Diagrama de Fluxo (Cadastro de Anomalia)
+Abaixo está o fluxo arquitetural de como um alerta é processado e validado pela API:
+
+```mermaid
+graph TD;
+    A[Dispositivo de Solo / Edge] -->|POST /alertas| B(AlertaController);
+    B --> C{ValidadorDeAlerta Strategy};
+    C -->|Regra Falha| D[TratadorGlobalDeErros];
+    D --> E[Retorna 400 Bad Request];
+    C -->|Regra Aprovada| F[DispositivoRepository Busca ID];
+    F -->|ID Inexistente| G[TratadorGlobalDeErros];
+    G --> H[Retorna 404 Not Found];
+    F -->|ID Encontrado| I[AlertaRepository.save];
+    I --> J[(MySQL Database)];
+    J --> K[Retorna 201 Created + DTO];
+``` 
