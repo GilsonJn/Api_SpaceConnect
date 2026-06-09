@@ -49,15 +49,16 @@ public class AlertaController {
         return ResponseEntity.ok(alertas);
     }
 
-    @PutMapping
+    @PutMapping("/{id}/resolver")
     @Transactional
-    public ResponseEntity<DadosDetalhamentoAlerta> atualizar(@RequestBody @Valid DadosAtualizacaoAlerta dados) {
-        var alerta = alertaRepository.getReferenceById(dados.id());
-        alerta.atualizarInformacoes(dados);
+    public ResponseEntity<DadosDetalhamentoAlerta> resolverAlerta(@PathVariable Long id) {
 
+        var alerta = alertaRepository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+
+        alerta.marcarComoResolvido();
         return ResponseEntity.ok(new DadosDetalhamentoAlerta(alerta));
     }
-
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity excluir(@PathVariable Long id) {
