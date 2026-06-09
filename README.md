@@ -18,6 +18,12 @@ A **Space Connect Core API** é o motor central de um ecossistema de monitoramen
 
 Esta API centraliza esses dados heterogêneos, valida regras críticas de segurança de solo, gerencia o ciclo de vida dos dispositivos e fornece um histórico imutável e auditável de alertas de anomalias com manipulação de tempo precisa.
 
+## 🔗 Vídeo Demostrativo
+
+Neste vídeo, demonstramos o funcionamento prático da Space Connect Core API
+
+👉 https://youtu.be/HqFpGbKdgVc 
+
 ---
 
 ## 🏛️ Arquitetura de Software e Padrões de Projeto (Design Patterns)
